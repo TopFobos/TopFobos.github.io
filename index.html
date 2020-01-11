@@ -1,218 +1,28 @@
-﻿<!DOCTYPE html>
-<html> 
-<head>
-    <meta charset="utf-8" lang="ru">
-    <link rel="stylesheet" href="style.css">
-    <title>Сапёр</title>
-</head> 
-<body>
-    <div id="vesIkran">
-    <div id="recurs"></div>
-        <div id="probel"></div>
-    <div id="recurs2"></div>
-    <div id="tablo">
-    <div id="openCell"></div>
-    <div id="message"></div>
-    </div>
-    <br>
-    <div id="container"></div>
-        <div id="niz"></div>
-    </div>
-    <script>
-        window.oncontextmenu=function(sob){
-                        sob.preventDefault();
-        }
-        var ax=16;
-        var ay=16;
-        var gameOver=0;
-        var vMines=30;
-        var openCell=0;
-        var mines=new Array(ax*ay);
-        var pole=new Array(ax*ay);
-        var tabloOpen=document.getElementById("openCell");
-        var container=document.getElementById("container");
-        var vesIcran=document.getElementById("vesIkran");
-        var message=document.getElementById("message");
-        var recurs=document.getElementById("recurs")
-        
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello my world</title>
+        <meta lang="ru">
+        <meta charset="utf-8">
+        <link rel ="stylesheet"  href="css/styles.css">
+        <link rel="shortcut icon" href="img/fav2.png">
+    </head>
+   <body>
+       
+       
+       <nav class="menu1">
+           <ul>
+               <li class = "menuitem"><a href="index.html">Главная</a>
+               </li><li class = "menuitem"><a href="saper.html">Сапёр</a>
+               </li><li class = "menuitem"><a href="canvas.html">Холст</a>
+               </li>
+           </ul>
+       </nav>
+            
+       
+       
+       <h1>Михаил Иньков</h1>
 
-        sozdGlav()
-        var user=document.getElementById("user");
-        
-        recurs.onclick=function(){
-    
-            pereDel()
-        }
-        recurs2.onclick=function(){
-    
-            pereDel2()
-        }
-        
- function sozdGlav(){
-        mines=new Array(ax*ay);
-        message.innerHTML=""
-        var mm=0;
-        var f=0;
-        gameOver=0;
-        openCell=0;
-        tabloOpen.innerHTML="Счёт: "+openCell
-        
-        for (i=0;i<ax*ay;i++){
-            mines[i]=0;
-        }
-while(mm<=vMines){
-    var am=Math.floor(Math.random()*ax*ay);
-    
-    if(mines[am]==0){
-        mines[am]=1;
-        mm++;
-    }
-}
-        
-        vesIcran.style.width=2+ay*25+"px";
-        
-        
-        container.style.width=ay*25+"px";
-        for(var i=0; i<ax; i++){
-            for(var j=0; j<ay; j++){
-
-                    pole[i*ay+j]=document.createElement("div");
-                    container.appendChild(pole[i*ay+j]);
-                    pole[i*ay+j].className="belka";
-                    pole[i*ay+j].setAttribute("x",i);
-                    pole[i*ay+j].setAttribute("y",j);
-                    
-                //Нажатие левой кнопкой мыши
-                    pole[i*ay+j].onclick=function(sob){
-                        if (gameOver==0 ){
-                        var elem=sob.target;
-                        var x=Number.parseInt(elem.getAttribute("x"));
-                        var y=Number.parseInt(elem.getAttribute("y"));
-                        if(elem.className!=="zelka"){
-                        if (elem.className=="belka"){elem.className="strelka"; 
-                                                     elem.innerHTML=countMines(x,y);
-                                                     if (elem.innerHTML==0){
-                                                         openPole(x,y);
-                                                     }
-                                                     if (elem.innerHTML=="M"){
-                                                         message.innerHTML="Вы проиграли!!!"
-                                                         gameOver=1
-                                                     }
-                                                     else{
-                                                         openCell++
-                                                         tabloOpen.innerHTML="Счёт: "+openCell
-                                                         if (openCell==ax*ay-vMines){
-                                                             message.innerHTML="Победа!!!"
-                                                             gameOver=2
-                                                         }
-                                                     }
-                                                    }
-                        }
-                        
-
-                    }
-                    }
-                    
-                    pole[i*ay+j].oncontextmenu=function(sob){
-                        sob.preventDefault()
-                        if (gameOver==0){
-                        var elem=sob.target;
-                        if (elem.className!=="strelka"){
-                        if(elem.className=="zelka"){elem.className="belka";}
-                        else elem.className="zelka";
-                    }
-                    }
-            }
-        }
-        }
-        
-                
-function countMines(x,y){
-    var m=0;
-    if (mines[x*ay+y]==1){
-        m="M"
-        return m
-    }
-    else{
-    for (var i=-1;i<=1;i++){
-        for (var j=-1;j<=1;j++){
-            if ((x+i>=0)&&(x+i<ax)&&(y+j>=0)&&(y+j<ay)){
-                if(mines[(x+i)*ay+(y+j)]==1){m++;}
-                
-            }
-            }
-        }
-
-    }
-    return m;
-}
-function openPole(x,y){
-     for (var i=-1;i<=1;i++){
-        for (var j=-1;j<=1;j++){
-            if ((x+i>=0)&&(x+i<ax)&&(y+j>=0)&&(y+j<ay)){
-                if (i!==0 || j!==0 ){
-                    if (pole[(x+i)*ay+(y+j)].className=="belka"){
-                    var m1=countMines(x+i,y+j);
-                    pole[(x+i)*ay+(y+j)].innerHTML=m1;
-                    pole[(x+i)*ay+(y+j)].className="strelka";
-                    openCell++
-                    tabloOpen.innerHTML="Счёт: "+openCell
-                    if (m1==0){
-                        openPole(x+i,y+j)
-                    }
-                }
-                }
-                
-            }
-        }
-     }
-}
-
-        
-        
-
-                    /*var strelka=document.createElement("div");
-                    container.appendChild(strelka);
-                    strelka.className="strelka";*/
-                         
-
-        
-                //if((i+a)%2==1){
-                  //  var strelka=document.createElement("div");
-                    //container.appendChild(strelka);
-                    //strelka.className="strelka";
-                    
-                //}
-        }
-        function pereDel(){
-        for(var i=0; i<ax; i++){
-            for(var j=0; j<ay; j++){
-
-                    container.removeChild(container.firstChild)
-                    
-            }
-        }
-        
-        ax=12;
-        ay=12;
-        vMines=30;
-        sozdGlav()
-    }
-        function pereDel2(){
-        for(var i=0; i<ax; i++){
-            for(var j=0; j<ay; j++){
-
-                    container.removeChild(container.firstChild)
-                    
-            }
-        }
-        
-        ax=20;
-        ay=20;
-        vMines=70;
-        sozdGlav()
-    }
-        
-    </script>
-</body> 
+<h3>Первый сайт Михаила Инькова</h3>
+    </body>
 </html>

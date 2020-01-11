@@ -1,0 +1,67 @@
+html,body{
+    height: 100%;
+    }
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    width:300px;
+    border: 1px solid black;
+    }
+.belka{
+    height: 25px;
+    width: 25px;
+    background: blue;
+    background: linear-gradient(top right, #00f,#008);
+    background: -moz-linear-gradient(top right, #00f,#008);
+    background: -o-linear-gradient(top right, #00f,#008);
+    background: -webkit-linear-gradient(top right, #00f,#008);
+    background: -ms-linear-gradient(top right, #00f,#008);
+    }
+.strelka{
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    text-align: center;
+    }
+.zelka{
+    height: 25px;
+    width: 25px;
+    background: red;
+    background: radial-gradient(center, #00f,#800);
+    background: -moz-radial-gradient(center, #f00,#800);
+    background: -o-radial-gradient(center, #f00,#800);
+    background: -webkit-radial-gradient(center, #f00,#800);
+    background: -ms-radial-gradient(center, #f00,#800);
+    }
+#vesIcran,#tablo{ display: flex;
+    flex-wrap: wrap;
+    width:300px;
+    border: 2px solid green;
+    height: 50px;
+    background: blue;
+}
+#message{
+    color: red;
+    font-size: 25px;
+}
+#openCell{
+    width: 30%;
+    color: greenyellow;
+}
+#vesIcran{ display: flex;
+    justify-content: center;
+}
+#user{
+    display: flex;
+    flex-wrap: wrap;
+    width:300px;
+    height: 30px;
+    background: red;
+    
+}

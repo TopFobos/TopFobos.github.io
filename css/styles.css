@@ -1,0 +1,148 @@
+h1{
+    color: blue;
+}
+
+.p1 {
+  font-family: 'helvetica neue', helvetica, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  border: 2px solid rgba(0,0,200,0.6);
+  background: rgba(0,0,200,0.3);
+  color: rgba(0,0,200,0.6);
+  box-shadow: 1px 1px 2px rgba(0,0,200,0.4);
+  border-radius: 10px;
+  padding: 3px 10px;
+  display: inline-block;
+  cursor:pointer;
+}
+.p2 {
+  font-family: 'helvetica neue', helvetica, sans-serif;
+  letter-spacing: 1px;
+  border: 2px solid rgba(0,200,0,0.6);
+  background: rgba(0,200,0,0.3);
+  color: rgba(0,0,200,0.6);
+  box-shadow: 1px 1px 2px rgba(0,0,200,0.4);
+  border-radius: 10px;
+  padding: 3px 10px;
+  cursor:pointer;
+}
+
+#YLink:hover{
+    color: red;
+    background-color: green;
+    width: 200px
+}
+
+.menu1{
+    display: flex;
+    justify-content: center;
+}
+
+.menuitem{
+    display: inline-block;
+    border-top: 2px solid blue;
+    border-bottom: 2px solid blue;
+    border-left: 1px solid blue;
+    border-right: 1px solid blue;
+    padding: 5px 15px;
+    cursor: pointer;
+    text-align:center;
+    
+}
+.menuitem:first-child{
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.menuitem:last-child{
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.menuitem:hover {
+    background-color: aqua;
+}
+
+#windserf:hover{
+    transform: scaleY(2);
+    transition: transform 2s ease 0.5s
+}
+
+#emc:active{
+    transform: rotate(360deg);
+    transition: transform 2s linear;
+}
+
+img {
+    cursor: pointer;
+}
+.tyu{
+    width:10%;
+}
+textarea{
+    resize: none;
+}
+fieldset{
+    width: 235px;
+}
+#myPainter{
+    border: 1px solid blue;
+}
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    width:300px;
+    border: 1px solid black;
+    }
+.belka{
+    height: 25px;
+    width: 25px;
+    background: blue;
+    background: linear-gradient(top right, #00f,#008);
+    background: -moz-linear-gradient(top right, #00f,#008);
+    background: -o-linear-gradient(top right, #00f,#008);
+    background: -webkit-linear-gradient(top right, #00f,#008);
+    background: -ms-linear-gradient(top right, #00f,#008);
+    }
+.strelka{
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    text-align: center;
+    }
+.zelka{
+    height: 25px;
+    width: 25px;
+    background: red;
+    background: radial-gradient(center, #00f,#800);
+    background: -moz-radial-gradient(center, #f00,#800);
+    background: -o-radial-gradient(center, #f00,#800);
+    background: -webkit-radial-gradient(center, #f00,#800);
+    background: -ms-radial-gradient(center, #f00,#800);
+    }
+#vesIcran,#tablo{ display: flex;
+    flex-wrap: wrap;
+    width:300px;
+    border: 2px solid green;
+    height: 50px;
+    background: blue;
+}
+#message{
+    color: red;
+    font-size: 25px;
+}
+#openCell{
+    width: 30%;
+    color: greenyellow;
+}
+#vesIcran{ display: flex;
+    justify-content: center;
+}
+#user{
+    display: flex;
+    flex-wrap: wrap;
+    width:300px;
+    height: 30px;
+    background: red;
+    
+}
