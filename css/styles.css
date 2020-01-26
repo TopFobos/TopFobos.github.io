@@ -135,7 +135,7 @@ fieldset{
     width: 30%;
     color: greenyellow;
 }
-#vesIcran{ display: flex;
+body,#vesIcran{ display: flex;
     justify-content: center;
 }
 #user{
@@ -145,4 +145,27 @@ fieldset{
     height: 30px;
     background: red;
     
+}
+
+#recurs{
+    background: red;
+    color: aqua;
+    width: 60px;
+    height: 60px;
+}
+#recurs2{
+    background: gray;
+    color: aqua;
+    width: 60px;
+    height: 60px;
+}
+#probel{
+    width: 50px;
+    height: 60px;
+}
+#niz{
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    height: 80px;
 }
